@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('slug');
             $table->string('writer');
             $table->string('image');
-            $table->string('content');
+            $table->longText('content');
             $table->boolean('status')->default(true);
             $table->string('meta_title')->nullable();
             $table->text('meta_keywords')->nullable();

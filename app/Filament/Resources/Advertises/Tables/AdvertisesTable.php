@@ -6,7 +6,9 @@ use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 
 class AdvertisesTable
@@ -15,16 +17,14 @@ class AdvertisesTable
     {
         return $table
             ->columns([
-                TextColumn::make('banner')
-                    ->searchable(),
+                ImageColumn::make('banner'),
                 TextColumn::make('redirect_url')
                     ->searchable(),
                 TextColumn::make('company_name')
                     ->searchable(),
                 TextColumn::make('contact_no')
                     ->searchable(),
-                IconColumn::make('status')
-                    ->boolean(),
+                ToggleColumn::make('status'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

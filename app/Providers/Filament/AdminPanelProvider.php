@@ -30,7 +30,7 @@ class AdminPanelProvider extends PanelProvider
             ->brandName('Admin')
             ->login()
             ->profile()
-            ->registration()
+            // ->registration()
             ->colors([
                 'primary' => Color::Amber,
             ])

@@ -1,3 +1,9 @@
+{{-- @props(['categories']) --}}
+
+{{-- @php
+    $categories = App\Models\Category::all();
+@endphp --}}
+
 <header class="sticky top-0 bg-white z-20">
 
     <div class="flex justify-between items-center container py-4">
@@ -13,12 +19,9 @@
         <div class="container flex justify-between items-center">
             <div class="flex gap-8 text-lg">
                 <a href="">गृहपृष्ठ</a>
-                <a href="">गृहपृष्ठ</a>
-                <a href="">गृहपृष्ठ</a>
-                <a href="">गृहपृष्ठ</a>
-                <a href="">गृहपृष्ठ</a>
-                <a href="">गृहपृष्ठ</a>
-                <a href="">गृहपृष्ठ</a>
+                @foreach ($categories as $category)
+                    <a href="">{{ $category->title }}</a>
+                @endforeach
             </div>
             <div>
 

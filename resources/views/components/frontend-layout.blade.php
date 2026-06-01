@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{{-- @props(['categories']) --}}
 
 <head>
     <meta charset="UTF-8">
@@ -14,6 +15,7 @@
 </head>
 
 <body>
+
 
     <x-frontend-header />
 

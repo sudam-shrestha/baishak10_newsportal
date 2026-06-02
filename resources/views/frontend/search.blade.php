@@ -1,10 +1,9 @@
-<x-frontend-layout title="{{ $category->meta_title }}" keywords="{{ $category->meta_keywords }}"
-    description="{{ $category->meta_description }}" image="{{ asset(Storage::url($category->articles[0]->image)) }}">
+<x-frontend-layout>
     <section>
         <div class="container py-10 grid grid-cols-3 gap-8">
             <div class="col-span-2 space-y-6">
-                <h1 class="text-3xl font-semibold mb-5">{{ $category->title }}</h1>
-                @foreach ($category->articles as $article)
+                <h1 class="text-3xl font-semibold mb-5">Result for: {{ $search }}</h1>
+                @foreach ($articles as $article)
                     <div class="shadow rounded-md overflow-hidden">
                         <a href="{{ route('article', $article->slug) }}" class="grid grid-cols-3 items-center">
                             <div>

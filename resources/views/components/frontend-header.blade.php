@@ -18,14 +18,14 @@
     <nav class="bg-(--primary) text-white py-2">
         <div class="container flex justify-between items-center">
             <div class="flex gap-8 text-lg">
-                <a href="">गृहपृष्ठ</a>
+                <a href="{{ route('home') }}">गृहपृष्ठ</a>
                 @foreach ($categories as $category)
-                    <a href="">{{ $category->title }}</a>
+                    <a href="{{ route('category', $category->slug) }}">{{ $category->title }}</a>
                 @endforeach
             </div>
             <div>
 
-                <form action="" method="GET" class="min-w-sm max-w-lg mx-auto">
+                <form action="{{ route('search') }}" method="GET" class="min-w-sm max-w-lg mx-auto">
                     <label for="search" class="block mb-2.5 text-sm font-medium text-heading sr-only ">Search</label>
                     <div class="relative">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -38,7 +38,7 @@
                         <input type="search" id="search" name="q"
                             class="block w-full p-3 ps-9 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-(--primary) focus:border-(--primary) shadow-xs placeholder:text-body"
                             placeholder="Search" required />
-                        <button type="button"
+                        <button type="submit"
                             class="absolute end-1.5 bottom-1.5 text-white bg-(--primary)/92 hover:bg-(--primary) box-border border border-transparent focus:ring-4 focus:ring-(--primary)/80 shadow-xs font-medium leading-5 rounded text-xs px-3 py-1.5 focus:outline-none">Search</button>
                     </div>
                 </form>

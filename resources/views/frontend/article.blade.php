@@ -1,8 +1,8 @@
 <x-frontend-layout title="{{ $article->meta_title }}" keywords="{{ $article->meta_keywords }}"
     description="{{ $article->meta_description }}" image="{{ asset(Storage::url($article->image)) }}">
     <section>
-        <div class="container py-10 grid grid-cols-3 gap-8">
-            <div class="col-span-2 space-y-6">
+        <div class="container py-10 grid md:grid-cols-3 gap-8">
+            <div class="md:col-span-2 space-y-6">
                 <div class="flex items-center gap-2">
                     <span>Author:{{ $article->writer }}</span>,
                     <span>{{ toNepaliDate($article->created_at->format('Y-m-d')) }}</span>
@@ -26,4 +26,9 @@
             </div>
         </div>
     </section>
+
+
+    {{-- @push('js')
+        <script></script>
+    @endpush --}}
 </x-frontend-layout>

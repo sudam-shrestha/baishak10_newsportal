@@ -11,11 +11,11 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
-Route::get("/categories", [ApiController::class, 'categories']);
+Route::get("/categories", [ApiController::class, 'categories'])->middleware('auth:sanctum');
 Route::get("/category/{slug}", [ApiController::class, 'category']);
-Route::post("/category/store", [CategoryController::class, 'store']);
-Route::patch("/category/update/{id}", [CategoryController::class, 'update']);
-Route::delete("/category/delete/{id}", [CategoryController::class, 'delete']);
+Route::post("/category/store", [CategoryController::class, 'store'])->middleware('auth:sanctum');
+Route::patch("/category/update/{id}", [CategoryController::class, 'update'])->middleware('auth:sanctum');
+Route::delete("/category/delete/{id}", [CategoryController::class, 'delete'])->middleware('auth:sanctum');
 
 
 Route::get("/latest-articles", [ApiController::class, 'latest_articles']);
